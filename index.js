@@ -23,6 +23,7 @@ app.set("views", path.join(__dirname, "views"));
 
 /* Využití modulu body-parser pro parsování těla požadavku */ 
 const urlencodedParser = bodyParser.urlencoded({extended: false});
+
 app.post('/savedata', urlencodedParser, function(req, res) {
   let data = `"${req.body.film}","${req.body.rok}","${req.body.hodnoceni}","${req.body.poznamka}"\n`;
   fs.appendFile(path.join(__dirname, 'data/filmy.csv'), data, function(err) {
@@ -50,10 +51,10 @@ app.get("/hodnoceni", function(req, res)  {
   'data/filmy.csv'))
   .then(data => {
     console.log(data);
-    res.render('index', {nadpis: "Hodnocení filmů", filmy: data});
+    res.render('index', {filmy: data});
     })
     .catch(err => {
       console.log(err);
-      res.render('error', {nadpis: "Chyba v aplikaci", chyba: err});
+      res.render('error', {chyba: err});
     }); 
   });

@@ -1,13 +1,83 @@
-doctype html 
+doctype html
 html
     head
-        title "Pokus" 
-        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
-        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js") 
+        title Hodnocení Filmů
+        link(href="https://cdn-icons-png.flaticon.com/512/5395/5395494.png", rel="icon")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/bootstrap/css/bootstrap.min.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/bootstrap-icons/bootstrap-icons.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/aos/aos.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/glightbox/css/glightbox.min.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/swiper/swiper-bundle.min.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/css/main.css', type='text/css' )
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', type='text/css' )
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js', type='text/css' )
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css' )
+        link(rel='stylesheet', href='https://www.mcbans.com/css/table.css?1675420676', type='text/css' )
+        script(src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js")
+        script(src="./assets/vendor/aos/aos.js")
+        script(src="./assets/vendor/glightbox/js/glightbox.min.js")
+        script(src="./assets/vendor/purecounter/purecounter_vanilla.js")
+        script(src="./assets/vendor/swiper/swiper-bundle.min.js")
+        script(src="./assets/vendor/isotope-layout/isotope.pkgd.min.js")
+        script(src="./assets/vendor/php-email-form/validate.js")
+        script(src="./assets/js/main.js")
     body
-        header.bg-success.text-white.text-center.p-1
-            h1 #{nadpis}
-        footer.text-center.bg-warning
-            div.text-center.p-3
-                p © 2020 Copyright: Kubík
-                    
+        header(id="header" class="header d-flex align-items-center")
+            div.container-fluid.container-xl.d-flex.align-items-center.justify-content-between
+                a(href="/" class="logo d-flex align-items-center") 
+                    img(src="https://cdn-icons-png.flaticon.com/512/5395/5395494.png" alt="")
+                nav(id="navbar" class="navbar")
+                    ul
+                        li
+                            a(href="/") Hlavní formulář
+                        li    
+                            a(href="/hodnoceni") Výsledky
+                i(class="mobile-nav-toggle mobile-nav-show bi bi-list")
+                i(class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x")
+        section(id="home" class="hero")
+            div(class="container position-relative")
+                div(class="row gy-5" data-aos="fade-in")
+                    div(class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start")
+                        h2 Toto je stránka image.png
+                            span(class="color") Hodnocení filmů
+                        p Doufám že ti popíšu jak to tady funguje
+                        div(class="d-flex justify-content-center justify-content-lg-start")
+                            a(href="#about" class="btn-get-started") O stránce
+                div(class="col-lg-6 order-1 order-lg-2")
+                    hr
+        main(id="main" class="portfolio sections-bg")
+            section(id="about" class="about")
+                div(class="container" data-aos="fade-up")
+                    div(class="section-header" id="vanilla")
+                        h2 O webu
+                        p Tento web slouží jako místo kde se můžou hodnotit filmy které se následně zobrazují v přehledné tabulce
+                    div(class="row gy-4")
+                        div(class="col-lg-6")
+                            h3 Popis
+                            img(src="https://i.pinimg.com/originals/ff/0c/96/ff0c96dc02eb010b4ccd17d85e9d07bd.jpg" class="img-fluid rounded-4 mb-4" alt="")
+                        div(class="col-lg-6")
+                            div(class="content ps-0 ps-lg-5")
+                                p(class="fst-italic") Co ti můžeme nabídnout?
+                                ul
+                                    li
+                                        i(class="bi bi-check-circle-fill") 
+                                        p Přehledný web kde se nikdo neztratí
+                                    li
+                                        i(class="bi bi-check-circle-fill") 
+                                        p Moderní vzhled který ohromí každého
+                                p Hodnotit film u nás může každý tak neváhej a jdi to hned vyzkoušet
+                                div(class="position-relative mt-4")
+                                    img(src="https://images7.alphacoders.com/915/thumb-1920-915515.jpg" class="img-fluid rounded-4" alt="" id="skyblock")
+       
+        footer(id="footer" class="footer")
+            div(class="container mt-4")
+                div(class="copyright") &copy; Copyright 
+                    strong
+                        span Jakub Rybka
+                div(class="credits") IT2, SŠPU Opava
+        a(href="#" class="scroll-top d-flex align-items-center justify-content-center")
+            i(class="bi bi-arrow-up-short")
+        div(id="preloader")

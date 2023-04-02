@@ -1,31 +1,84 @@
-doctype html 
+doctype html
 html
     head
-        title "Pokus" 
-        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
-        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js") 
+        title Hodnocení Filmů
+        link(href="https://cdn-icons-png.flaticon.com/512/5395/5395494.png", rel="icon")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/bootstrap/css/bootstrap.min.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/bootstrap-icons/bootstrap-icons.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/aos/aos.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/glightbox/css/glightbox.min.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/vendor/swiper/swiper-bundle.min.css', type='text/css' )
+        link(rel='stylesheet', href='./assets/css/main.css', type='text/css' )
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', type='text/css' )
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js', type='text/css' )
+        link(rel='stylesheet', href='./assets/css/vysledky.css', type='text/css' )
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css' )
+        link(rel='stylesheet', href='https://www.mcbans.com/css/table.css?1675420676', type='text/css' )
+        script(src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js")
+        script(src="./assets/vendor/aos/aos.js")
+        script(src="./assets/vendor/glightbox/js/glightbox.min.js")
+        script(src="./assets/vendor/purecounter/purecounter_vanilla.js")
+        script(src="./assets/vendor/swiper/swiper-bundle.min.js")
+        script(src="./assets/vendor/isotope-layout/isotope.pkgd.min.js")
+        script(src="./assets/vendor/php-email-form/validate.js")
+        script(src="./assets/js/main.js")
     body
-        header.bg-success.text-white.text-center.p-1
-            h1 #{nadpis}
-        main.container
-            table(class="table table-striped")
-                thead
-                    tr.bg-dark.text-light 
-                        th Název filmu
-                        th Rok vydání filmu 
-                        th Hodnocení filmu
-                        th Poznámka k filmu
-                tbody 
-                    each film in filmy
-                        tr
-                            td #{film.film}
-                            td #{film.rok}
-                            td #{film.hodnoceni}
-                            td #{film.poznamka}
-        footer.text-center.bg-warning
-            div.text-center.p-3
-                p © 2020 Copyright: Kubík
-                p
-                    a(href="/") Úvodní stránka
-                p
-                    a(href="/about") O programu
+        header(id="header" class="header d-flex align-items-center")
+            div.container-fluid.container-xl.d-flex.align-items-center.justify-content-between
+                a(href="/" class="logo d-flex align-items-center") 
+                    img(src="https://cdn-icons-png.flaticon.com/512/5395/5395494.png" alt="")
+                nav(id="navbar" class="navbar")
+                    ul
+                        li
+                            a(href="/") Hlavní formulář
+                        li    
+                            a(href="/about") O stránce
+                i(class="mobile-nav-toggle mobile-nav-show bi bi-list")
+                i(class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x")
+        section(id="home" class="hero")
+            div(class="container position-relative")
+                div(class="row gy-5" data-aos="fade-in")
+                    div(class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start")
+                        h2 Výsledky hodnocení 
+                            span(class="color") filmů
+                        p Zde najdeš seznam hodnocení filmů
+                
+        main(id="main" class="portfolio sections-bg")
+            section(id="about" class="about")
+                div(class="container" data-aos="fade-up")
+                    div(class="section-header" id="vanilla")
+                        h2 Seznam hodnocených filmů
+            section(id="banlist" class="portfolio sections-bg")
+                div(id="content-container")
+                    div(id="content")
+                        div(class="box-element")
+                            div(class="box-head-light")
+                                h3 Nedávné bany
+                            div(class="box-content no-padding")
+                                div(class="dataTables_wrapper")
+                                    table(class="i-table fullwidth table table-striped")
+                                        thead
+                                            tr
+                                                td Název filmu
+                                                td Rok vydání filmu
+                                                td Hodnocení filmu
+                                                td Poznámka k filmu
+                                        tbody
+                                            each film in filmy
+                                                tr
+                                                    td #{film.film}
+                                                    td #{film.rok}
+                                                    td #{film.hodnoceni}
+                                                    td #{film.poznamka}
+        footer(id="footer" class="footer")
+            div(class="container mt-4")
+                div(class="copyright") &copy; Copyright 
+                    strong
+                        span Jakub Rybka
+                div(class="credits") IT2, SŠPU Opava
+        a(href="#" class="scroll-top d-flex align-items-center justify-content-center")
+            i(class="bi bi-arrow-up-short")
+        div(id="preloader")

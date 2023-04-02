@@ -1,133 +1,121 @@
 <!DOCTYPE html>
-<html lang="cs">
-  <head>
-    <title>Hodnocení filmů</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<html lang="en">
 
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5395/5395494.png" type="image/x-icon">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Výsledky</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-            aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarID">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">About</a>
-                    
-            </div>
-          </div>
-      </div>
-    </nav>
-    <header class="bg-warning text-center p-5">
-      <h1 class="display-3 text-white">Hodnocení filmů</h1>
-    </header>
-    <main class="container">
-      <h2 class="bg-info text-light text-center p-3 mt-3">
-        Formulář pro hodnocení filmů
-      </h2>
-      <div class="container">
-        <form action="/savedata" method="POST">
-          <div class="form-group row">
-            <label for="film" class="col-sm-2 col-form-label"
-              >Film</label
-            >
-            <div class="col-sm-10">
-              <input
-                type="text"
-                class="form-control"
-                name="film"
-                id="film"
-                placeholder="Napište název filmu"
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="rok" class="col-sm-2 col-form-label">
-              Datum odevzdání</label
-            >
-            <div class="col-sm-5">
-              <input
-                type="number"
-                class="form-control"
-                name="rok"
-                id="rok"
-                min="1900"
-                max="2023"
-                placeholder="2020"
-                step="1"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="hodnoceni" class="col-sm-2 col-form-label">Předmět</label>
-            <div class="col-sm-10">
-              <select class="form-control" name="hodnoceni" id="hodnoceni">
-                <option value="0">0 hvězd</option>
-                <option value="1">1 hvězda</option>
-                <option value="2">2 hvězdy</option>
-                <option value="3" selected>3 hvězdy</option>
-                <option value="4">4 hvězdy</option>
-                <option value="5">5 hvězd</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="poznamka" class="col-sm-2 col-form-label"
-              >Poznámka</label
-            >
-            <div class="col-sm-10">
-              <input
-                type="text"
-                class="form-control"
-                name="poznamka"
-                id="poznamka"
-                placeholder="Napište poznámku k filmu"
-                required
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="offset-sm-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">
-                Odeslat údaje
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </main>
-    <footer class="bg-light text-center p-3">
-      <p> © 2020 Copyright: Kubík</p>
-    </footer>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Hodnocení filmů</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5395/5395494.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/notifications/notifications.css">
+</head>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+<body>
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/5395/5395494.png" alt="">
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/hodnoceni">Výsledky</a></li>
+          <li><a href="/about">O stránce</a></li>
+        </ul>
+      </nav>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header>
+  <section id="home" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Hodnocení <span class="color">Filmů</span></h2>
+          <p>Zde můžete ohodnotit filmy které jste viděly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main id="main" class="portfolio sections-bg">
+    <div style="display:flex;width:100%;" class="form">
+      <form onsubmit="" id="userform" action="/savedata" method="POST">
+        <div style="width:100%;">
+          <p for="film" >Název filmu</p>
+          <input type="text" name="film" id="film" placeholder="Napište název filmu" required>
+        </div>
+        <div style="width:100%;">
+          <p for="rok" >Rok vydání filmu</p>
+          <input type="number" name="rok"
+          id="rok"
+          min="1900"
+          max="2023"
+          placeholder="2020"
+          step="1"
+          required>
+        </div>
+        <div style="width:100%">
+          <p for="hodnoceni" >Hodnocení </p>
+          <select name="hodnoceni" id="hodnoceni">
+            <option value="0 hvězd">0 hvězd</option>
+            <option value="1 hvězda">1 hvězda</option>
+            <option value="2 hvězdy">2 hvězdy</option>
+            <option value="3 hvězdy" selected>3 hvězdy</option>
+            <option value="4 hvězdy">4 hvězdy</option>
+            <option value="5 hvězd">5 hvězd</option>
+          </select>
+        </div>
+        <div style="width:100%;">
+          <p for="poznamka" >Poznámka</p>
+          <input type="text" name="poznamka"
+          id="poznamka"
+          placeholder="Napište poznámku k filmu"
+          required>
+        </div>
+        <button type="submit" class="btn">Odeslat formulář</button>
+      </form>
+    </div>
+  </main>
+  <footer id="footer" class="footer">
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Jakub Rybka</span></strong>
+      </div>
+      <div class="credits">
+        IT2, SŠPU Opava
+      </div>
+    </div>
+  </footer>
+  <audio id="myAudio">
+  <source src="./assets/notifications/notification-sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/notifications/notifications.js"></script>
+</body>
+
 </html>
